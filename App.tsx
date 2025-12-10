@@ -52,7 +52,7 @@ export default function App() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900 via-black to-black opacity-50 z-0 pointer-events-none" />
 
       {/* Header / Controls */}
-      <div className="absolute top-0 right-0 p-6 z-20">
+      <div className="absolute top-0 right-0 p-6 z-20 select-none">
         {!isSettingsOpen && (
           <button
             onClick={handleOpenSettings}
@@ -66,7 +66,7 @@ export default function App() {
         )}
       </div>
 
-      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 font-semibold">
+      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 font-semibold select-none">
         <Activity className="w-5 h-5 text-red-900" />
         <span className="text-red-900 font-digital text-xs tracking-[0.2em] uppercase">
           Your Seconds
