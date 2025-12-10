@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Cog, Activity } from "lucide-react";
+
 import { UserData } from "./types";
 import { getCookie, setCookie } from "./utils/cookieUtils";
 import { Countdown } from "./components/Countdown";
@@ -65,7 +66,7 @@ export default function App() {
         )}
       </div>
 
-      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 opacity-50">
+      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 font-semibold">
         <Activity className="w-5 h-5 text-red-900" />
         <span className="text-red-900 font-digital text-xs tracking-[0.2em] uppercase">
           Your Seconds
@@ -86,8 +87,15 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="absolute bottom-4 text-gray-800 text-xs text-center w-full z-10 font-digital">
-        MEMENTO MORI
+      <footer className="absolute bottom-4 text-gray-700 text-xs text-center w-full z-10 font-digital select-none">
+        MEMENTO MORI - By{" "}
+        <a
+          className="text-gray-600 underline"
+          href="https://shahabcypher.ir"
+          target="_blank"
+        >
+          Cypher
+        </a>
       </footer>
     </div>
   );
