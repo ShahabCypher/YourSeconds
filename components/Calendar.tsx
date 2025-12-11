@@ -43,8 +43,10 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange }) => {
   // Handle date selection
   const handleDayClick = (day: number | null) => {
     if (day !== null) {
-      const newDate = new Date(selectedYear, selectedMonth, day);
-      const formattedDate = newDate.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+      // Create date with UTC to avoid timezone issues causing day offset
+      const newDate = new Date(Date.UTC(selectedYear, selectedMonth, day));
+      // Format as YYYY-MM-DD without timezone adjustments
+      const formattedDate = `${newDate.getUTCFullYear()}-${String(newDate.getUTCMonth() + 1).padStart(2, '0')}-${String(newDate.getUTCDate()).padStart(2, '0')}`;
       onChange(formattedDate);
       setIsOpen(false);
     }
@@ -174,7 +176,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange }) => {
               <select
                 value={selectedMonth}
                 onChange={handleMonthChange}
-                className="bg-gray-800 text-red-500 font-digital text-sm p-1 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-red-600"
+                className="bg-gray-800 text-red-500 font-digital text-sm p-1 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-red-600 calendar-dropdown"
               >
                 {monthNames.map((name, index) => (
                   <option key={index} value={index}>
@@ -186,7 +188,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange }) => {
               <select
                 value={selectedYear}
                 onChange={handleYearChange}
-                className="bg-gray-800 text-red-500 font-digital text-sm p-1 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-red-600"
+                className="bg-gray-800 text-red-500 font-digital text-sm p-1 border border-gray-700 rounded-sm focus:outline-none focus:ring-1 focus:ring-red-600 calendar-dropdown"
               >
                 {generateYears().map((year) => (
                   <option key={year} value={year}>
@@ -283,6 +285,24 @@ if (typeof document !== "undefined") {
 
     .calendar-days-container::-webkit-scrollbar-thumb:hover {
       background: #b91c1c; /* red-700 */
+    }
+
+    /* Minimalist scrollbar for month/year dropdowns */
+    .calendar-dropdown::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .calendar-dropdown::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .calendar-dropdown::-webkit-scrollbar-thumb {
+      background: #4b5563; /* Gray-600 */
+      border-radius: 2px;
+    }
+
+    .calendar-dropdown::-webkit-scrollbar-thumb:hover {
+      background: #374151; /* Gray-700 */
     }
   `;
   document.head.appendChild(style);
