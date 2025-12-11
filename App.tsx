@@ -49,7 +49,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden selection:bg-red-900 selection:text-white">
       {/* Background Ambience */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900 via-black to-black opacity-50 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-gray-900 via-black to-black opacity-50 z-0 pointer-events-none" />
 
       {/* Header / Controls */}
       <div className="absolute top-0 right-0 p-6 z-20 select-none">

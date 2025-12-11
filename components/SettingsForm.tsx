@@ -32,7 +32,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
   return (
     <div className="w-full max-w-md bg-gray-900/80 border border-gray-800 p-8 rounded-lg shadow-2xl backdrop-blur-md relative overflow-hidden select-none">
       {/* Decorative scanline */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-50"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red-600 to-transparent opacity-50"></div>
 
       <h2 className="text-2xl font-digital text-red-500 mb-6 tracking-wider flex items-center gap-2">
         <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
