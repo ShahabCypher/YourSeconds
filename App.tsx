@@ -8,6 +8,16 @@ import { SettingsForm } from "./components/SettingsForm";
 
 const COOKIE_NAME = "your_seconds_data";
 
+// Helper function to format date for display
+const formatDateForDisplay = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+};
+
 export default function App() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(true);
@@ -66,11 +76,21 @@ export default function App() {
         )}
       </div>
 
-      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 font-semibold select-none">
-        <Activity className="w-5 h-5 text-red-900" />
-        <span className="text-red-900 font-digital text-xs tracking-[0.2em] uppercase">
-          Your Seconds
-        </span>
+      <div className="absolute top-6 left-6 z-20 flex flex-col gap-1 font-semibold select-none max-w-xs">
+        <div className="flex items-center gap-2">
+          <Activity className="w-5 h-5 text-red-900" />
+          <span className="text-red-900 font-digital text-xs tracking-[0.2em] uppercase">
+            Your Seconds
+          </span>
+        </div>
+
+        {/* Current Settings Display - Subtle and compact */}
+        {!isSettingsOpen && userData && (
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-gray-600 font-digital uppercase tracking-wider">
+            <span>Born: {formatDateForDisplay(userData.dateOfBirth)}</span>
+            <span>Lifespan: {userData.lifespanYears} yrs</span>
+          </div>
+        )}
       </div>
 
       {/* Main Content Area */}
