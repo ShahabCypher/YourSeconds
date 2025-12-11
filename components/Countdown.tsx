@@ -46,7 +46,7 @@ export const Countdown: React.FC<CountdownProps> = ({ userData }) => {
     <div className="w-full flex flex-col items-center select-none">
       {/* Primary Display: Total Seconds */}
       <div className="mb-12 text-center group">
-        <h2 className="text-red-900 text-xs md:text-sm uppercase tracking-[0.5em] font-digital font-medium mb-2">
+        <h2 className="text-red-900 text-[3vw] md:text-sm lg:text-lg uppercase tracking-[0.5em] font-digital font-medium mb-2">
           Total Seconds Remaining
         </h2>
         <div className="relative">
