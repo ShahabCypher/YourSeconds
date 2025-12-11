@@ -77,7 +77,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="p-6 z-20 select-none">
+        <div className=" z-20 select-none">
           {!isSettingsOpen && (
             <button
               onClick={handleOpenSettings}
