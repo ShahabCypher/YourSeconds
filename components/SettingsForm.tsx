@@ -49,7 +49,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
           >
             Date of Birth
           </label>
-          <div className="relative">
+          <div className="relative z-50">
             <DatePicker value={dob} onChange={setDob} />
           </div>
         </div>

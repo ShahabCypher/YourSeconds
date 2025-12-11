@@ -92,7 +92,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="w-full bg-black flex flex-col items-center justify-center relative overflow-hidden selection:bg-red-900 selection:text-white">
+      <div className="w-full bg-black flex flex-col items-center justify-center relative selection:bg-red-900 selection:text-white">
         {/* Background Ambience */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-gray-900 via-black to-black opacity-50 z-0 pointer-events-none" />
 
@@ -110,7 +110,7 @@ export default function App() {
         </main>
       </div>
       {/* Footer */}
-      <footer className="w-full h-14 flex items-center justify-center text-gray-700 text-xs text-center z-10 font-digital select-none">
+      <footer className="w-full h-14 flex items-center justify-center text-gray-700 text-xs text-center font-digital select-none">
         MEMENTO MORI - By{" "}
         <a
           className="text-gray-600 underline"
