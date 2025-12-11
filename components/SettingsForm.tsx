@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Save, X } from "lucide-react";
 
 import { UserData } from "../types";
+import { DatePicker } from "./Calendar";
 
 interface SettingsFormProps {
   initialData: UserData | null;
@@ -30,7 +31,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
   };
 
   return (
-    <div className="w-full max-w-md bg-gray-900/80 border border-gray-800 p-8 rounded-lg shadow-2xl backdrop-blur-md relative overflow-hidden select-none">
+    <div className="w-full max-w-md bg-gray-900/80 border border-gray-800 p-8 rounded-lg shadow-2xl backdrop-blur-md relative select-none">
       {/* Decorative scanline */}
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red-600 to-transparent opacity-50"></div>
 
@@ -41,7 +42,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Date of Birth Input */}
-        <div className="pace-y-2">
+        <div className="space-y-2">
           <label
             htmlFor="dob"
             className="block text-xs uppercase tracking-widest text-gray-500 font-bold"
@@ -49,14 +50,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
             Date of Birth
           </label>
           <div className="relative">
-            <input
-              id="dob"
-              type="date"
-              required
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-              className="w-full bg-black border border-gray-700 text-red-500 font-digital text-lg p-3 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all rounded-sm placeholder-red-900"
-            />
+            <DatePicker value={dob} onChange={setDob} />
           </div>
         </div>
 
@@ -114,3 +108,15 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
     </div>
   );
 };
+
+// CSS for the fade-in animation (added in a style tag)
+if (typeof document !== "undefined") {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+}
