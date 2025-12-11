@@ -4,6 +4,25 @@ body {
   color: #fff;
 }
 
+/* Scroll bar */
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4b5563; /* Gray-600 */
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #374151; /* Gray-700 */
+}
+
+/* Digital font */
 .font-digital {
   font-family: "Orbitron", monospace;
 }
