@@ -35,7 +35,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
       {/* Decorative scanline */}
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red-600 to-transparent opacity-50"></div>
 
-      <h2 className="text-2xl font-digital text-red-500 mb-6 tracking-wider flex items-center gap-2">
+      <h2 className="text-xl sm:text-2xl font-digital text-red-500 mb-6 tracking-wider flex items-center gap-2">
         <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
         INITIALIZE
       </h2>
@@ -71,13 +71,13 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
               required
               value={lifespan}
               onChange={(e) => setLifespan(Number(e.target.value))}
-              className="w-full bg-black border border-gray-700 text-red-500 font-digital text-lg p-3 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all rounded-sm"
+              className="w-full bg-black border border-gray-700 text-red-500 font-digital text-base sm:text-lg p-2 sm:p-3 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all rounded-sm"
             />
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 text-sm font-digital">
+            <span className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-700 text-sm font-digital">
               YRS
             </span>
           </div>
-          <p className="text-[10px] text-gray-600 mt-1">
+          <p className="text-[8px] sm:text-[10px] text-gray-600 mt-1">
             Global average is approximately 73 years.
           </p>
         </div>

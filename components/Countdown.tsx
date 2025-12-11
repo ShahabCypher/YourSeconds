@@ -50,14 +50,14 @@ export const Countdown: React.FC<CountdownProps> = ({ userData }) => {
           Total Seconds Remaining
         </h2>
         <div className="relative">
-          <div className="font-digital text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] leading-none text-red-500 text-glow-red transition-all duration-1000 tabular-nums">
+          <div className="font-digital text-[10vw] leading-none text-red-500 text-glow-red transition-all duration-1000 tabular-nums">
             {formatLargeNumber(timeLeft.totalSeconds)}
           </div>
         </div>
       </div>
 
       {/* Secondary Display: Breakdown */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 w-full max-w-3xl">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8 w-full max-w-3xl">
         <Segment label="Years" value={timeLeft.years} />
         <Segment label="Days" value={timeLeft.days} />
         <Segment label="Hours" value={timeLeft.hours} />
@@ -65,11 +65,11 @@ export const Countdown: React.FC<CountdownProps> = ({ userData }) => {
       </div>
 
       {/* Seconds running standalone at bottom */}
-      <div className="mt-8 flex flex-col items-center">
-        <div className="font-digital text-4xl text-red-500/80 text-glow-dim tabular-nums">
+      <div className="mt-6 sm:mt-8 w-full flex flex-col items-center">
+        <div className="font-digital text-xl sm:text-2xl md:text-4xl text-red-500/80 text-glow-dim tabular-nums">
           {formatNumber(timeLeft.seconds)}
         </div>
-        <span className="text-red-900/50 text-[10px] uppercase tracking-widest font-digital mt-1">
+        <span className="text-red-900/50 text-[8px] sm:text-[10px] uppercase tracking-widest font-digital mt-1">
           Seconds
         </span>
       </div>

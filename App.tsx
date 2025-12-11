@@ -11,10 +11,10 @@ const COOKIE_NAME = "your_seconds_data";
 // Helper function to format date for display
 const formatDateForDisplay = (dateString: string): string => {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
 };
 
@@ -94,7 +94,7 @@ export default function App() {
       </div>
 
       {/* Main Content Area */}
-      <main className="z-10 w-full max-w-4xl px-4 flex flex-col items-center">
+      <main className="z-10 w-full max-w-6xl px-4 flex flex-col items-center">
         {isSettingsOpen ? (
           <SettingsForm
             initialData={userData}
