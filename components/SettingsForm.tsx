@@ -108,15 +108,3 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
     </div>
   );
 };
-
-// CSS for the fade-in animation (added in a style tag)
-if (typeof document !== "undefined") {
-  const style = document.createElement("style");
-  style.innerHTML = `
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  `;
-  document.head.appendChild(style);
-}
