@@ -46,7 +46,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange }) => {
       // Create date with UTC to avoid timezone issues causing day offset
       const newDate = new Date(Date.UTC(selectedYear, selectedMonth, day));
       // Format as YYYY-MM-DD without timezone adjustments
-      const formattedDate = `${newDate.getUTCFullYear()}-${String(newDate.getUTCMonth() + 1).padStart(2, '0')}-${String(newDate.getUTCDate()).padStart(2, '0')}`;
+      const formattedDate = `${newDate.getUTCFullYear()}-${String(
+        newDate.getUTCMonth() + 1
+      ).padStart(2, "0")}-${String(newDate.getUTCDate()).padStart(2, "0")}`;
       onChange(formattedDate);
       setIsOpen(false);
     }
