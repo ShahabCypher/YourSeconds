@@ -30,6 +30,12 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
     }
   };
 
+  const setYears = (e) => {
+    let value = e.target.value;
+    if (value !== "") value = Number(e.target.value);
+    setLifespan(value);
+  };
+
   return (
     <div className="w-full max-w-md bg-gray-900/80 border border-gray-800 p-8 rounded-lg shadow-2xl backdrop-blur-md relative select-none">
       {/* Decorative scanline */}
@@ -70,7 +76,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
               max="150"
               required
               value={lifespan}
-              onChange={(e) => setLifespan(Number(e.target.value))}
+              onChange={(e) => setYears(e)}
               className="w-full bg-black border border-gray-700 text-red-500 font-digital text-base sm:text-lg p-2 sm:p-3 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all rounded-sm"
             />
             <span className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-gray-700 text-sm font-digital">
