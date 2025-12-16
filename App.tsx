@@ -111,7 +111,7 @@ export default function App() {
       </div>
       {/* Footer */}
       <footer className="w-full h-14 flex items-center justify-center text-gray-700 text-xs text-center font-digital select-none">
-        MEMENTO MORI - By{" "}
+        MEMENTO MORI - By&nbsp;
         <a
           className="text-gray-600 underline"
           href="https://shahabcypher.ir"
